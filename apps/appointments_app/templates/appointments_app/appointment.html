@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>What's Up</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h5 style="text-align: right"><a href="/logout">Logout</a></h5>
+        <br>
+        <h2>Are you a hotel manager??</h2>
+        <form class="container" action="/finish" method="POST">
+           {% csrf_token %}
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="number of rooms" type="text" class="validate" name="nrr">
+                <label for="number of rooms">Number of Rooms</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="number of rooms" type="text" class="validate" name="pr">
+                <label for="number of rooms">Percentage buffer for Number of Rooms</label>
+              </div>
+            </div>
+            <input type="submit" value="finish" class="waves-effect waves-light btn">
+        </form>
+    </div>
+    <br>
+  </body>
+</html>

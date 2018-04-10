@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Make Reservations</title>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> -->
+    </head>
+
+    <body>
+      <div class="container">
+          <h2>Want to book a room??</h2>
+          {% if messages %}
+              <ul class="messages">
+              {% for message in messages %}
+              <li style="color:red">{{ message }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          <form action="/book" class="col s12" method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate" name="name">
+                <label for="name">Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="text" class="validate" name="email">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="number of rooms" type="text" class="validate" name="nr">
+                <label for="number of rooms">Number of Rooms</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="date" type="date" class="validate" name="ad">
+               Arrival Date
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="date" type="date" class="validate" name="dd">
+               Departure Date
+              </div>
+            </div>
+            <input type="submit" value="Book" class="waves-effect waves-light btn">
+          </form>
+          <p><h5 style="text-align: left"><a href="/back">Back to home</a></h5></p>
+        </div>
+    </body>
+</html>
